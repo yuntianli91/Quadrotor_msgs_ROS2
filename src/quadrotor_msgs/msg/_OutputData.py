@@ -10,8 +10,8 @@ import std_msgs.msg
 class OutputData(genpy.Message):
   _md5sum = "5759ee97fd5c090dcdccf7fc3e50d024"
   _type = "quadrotor_msgs/OutputData"
-  _has_header = True #flag to mark the presence of a Header object
-  _full_text = """Header header
+  _has_header = True #flag to mark the presence of a std_msgs/Header object
+  _full_text = """std_msgs/Header header
 uint16 loop_rate
 float64 voltage
 geometry_msgs/Quaternion orientation
@@ -25,7 +25,7 @@ uint8[8] radio_channel
 uint8 seq
 
 ================================================================================
-MSG: std_msgs/Header
+MSG: std_msgs/std_msgs/Header
 # Standard metadata for higher-level stamped data types.
 # This is generally used to communicate timestamped data 
 # in a particular coordinate frame.
@@ -60,7 +60,7 @@ float64 y
 float64 z
 """
   __slots__ = ['header','loop_rate','voltage','orientation','angular_velocity','linear_acceleration','pressure_dheight','pressure_height','magnetic_field','radio_channel','seq']
-  _slot_types = ['std_msgs/Header','uint16','float64','geometry_msgs/Quaternion','geometry_msgs/Vector3','geometry_msgs/Vector3','float64','float64','geometry_msgs/Vector3','uint8[8]','uint8']
+  _slot_types = ['std_msgs/std_msgs/Header','uint16','float64','geometry_msgs/Quaternion','geometry_msgs/Vector3','geometry_msgs/Vector3','float64','float64','geometry_msgs/Vector3','uint8[8]','uint8']
 
   def __init__(self, *args, **kwds):
     """
@@ -80,7 +80,7 @@ float64 z
       super(OutputData, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.loop_rate is None:
         self.loop_rate = 0
       if self.voltage is None:
@@ -102,7 +102,7 @@ float64 z
       if self.seq is None:
         self.seq = 0
     else:
-      self.header = std_msgs.msg.Header()
+      self.header = std_msgs.msg.std_msgs/Header()
       self.loop_rate = 0
       self.voltage = 0.
       self.orientation = geometry_msgs.msg.Quaternion()
@@ -156,7 +156,7 @@ float64 z
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.orientation is None:
         self.orientation = geometry_msgs.msg.Quaternion()
       if self.angular_velocity is None:
@@ -232,7 +232,7 @@ float64 z
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.orientation is None:
         self.orientation = geometry_msgs.msg.Quaternion()
       if self.angular_velocity is None:

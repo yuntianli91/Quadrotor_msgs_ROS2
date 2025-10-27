@@ -9,8 +9,8 @@ import std_msgs.msg
 class PPROutputData(genpy.Message):
   _md5sum = "732c0e3ca36f241464f8c445e78a0d0a"
   _type = "quadrotor_msgs/PPROutputData"
-  _has_header = True #flag to mark the presence of a Header object
-  _full_text = """Header header
+  _has_header = True #flag to mark the presence of a std_msgs/Header object
+  _full_text = """std_msgs/Header header
 uint16 quad_time
 float64 des_thrust
 float64 des_roll
@@ -28,7 +28,7 @@ float64 est_acc_z
 uint16[4] pwm
 
 ================================================================================
-MSG: std_msgs/Header
+MSG: std_msgs/std_msgs/Header
 # Standard metadata for higher-level stamped data types.
 # This is generally used to communicate timestamped data 
 # in a particular coordinate frame.
@@ -47,7 +47,7 @@ string frame_id
 
 """
   __slots__ = ['header','quad_time','des_thrust','des_roll','des_pitch','des_yaw','est_roll','est_pitch','est_yaw','est_angvel_x','est_angvel_y','est_angvel_z','est_acc_x','est_acc_y','est_acc_z','pwm']
-  _slot_types = ['std_msgs/Header','uint16','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','uint16[4]']
+  _slot_types = ['std_msgs/std_msgs/Header','uint16','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','uint16[4]']
 
   def __init__(self, *args, **kwds):
     """
@@ -67,7 +67,7 @@ string frame_id
       super(PPROutputData, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.quad_time is None:
         self.quad_time = 0
       if self.des_thrust is None:
@@ -99,7 +99,7 @@ string frame_id
       if self.pwm is None:
         self.pwm = [0,0,0,0]
     else:
-      self.header = std_msgs.msg.Header()
+      self.header = std_msgs.msg.std_msgs/Header()
       self.quad_time = 0
       self.des_thrust = 0.
       self.des_roll = 0.
@@ -152,7 +152,7 @@ string frame_id
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       end = 0
       _x = self
       start = end
@@ -211,7 +211,7 @@ string frame_id
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       end = 0
       _x = self
       start = end

@@ -6,7 +6,7 @@ namespace quadrotor_msgs
 {
 
 bool decodeOutputData(const std::vector<uint8_t> &data,
-                      quadrotor_msgs::OutputData &output)
+                      quadrotor_msgs::msg::OutputData &output)
 {
   struct OUTPUT_DATA output_data;
   if(data.size() != sizeof(output_data))
@@ -56,7 +56,7 @@ bool decodeOutputData(const std::vector<uint8_t> &data,
 }
 
 bool decodeStatusData(const std::vector<uint8_t> &data,
-                      quadrotor_msgs::StatusData &status)
+                      quadrotor_msgs::msg::StatusData &status)
 {
   struct STATUS_DATA status_data;
   if(data.size() != sizeof(status_data))
@@ -71,7 +71,7 @@ bool decodeStatusData(const std::vector<uint8_t> &data,
 }
 
 bool decodePPROutputData(const std::vector<uint8_t> &data,
-                         quadrotor_msgs::PPROutputData &output)
+                         quadrotor_msgs::msg::PPROutputData &output)
 {
   struct PPR_OUTPUT_DATA output_data;
   if(data.size() != sizeof(output_data))

@@ -7,14 +7,14 @@ struct SO3_CMD_INPUT
   // Scaling factors when decoding
   int16_t force[3]; // /500
   int8_t des_qx, des_qy, des_qz, des_qw; // /125
-  uint8_t kR[3]; // /50
-  uint8_t kOm[3]; // /100
+  uint8_t k_r[3]; // /50
+  uint8_t k_om[3]; // /100
   int16_t cur_yaw; // /1e4
   int16_t kf_correction; // /1e11;
   uint8_t angle_corrections[2]; // roll,pitch /2500
   uint8_t enable_motors:1;
   uint8_t use_external_yaw:1;
-  uint8_t seq;
+  // uint8_t seq;
 };
 
 #define TYPE_STATUS_DATA 'c'
@@ -79,9 +79,9 @@ struct PPR_OUTPUT_DATA
 #define TYPE_PPR_GAINS 'g'
 struct PPR_GAINS
 {
-  int16_t Kp;
-  int16_t Kd;
-  int16_t Kp_yaw;
-  int16_t Kd_yaw;
+  int16_t kp;
+  int16_t kd;
+  int16_t kp_yaw;
+  int16_t kd_yaw;
 };
 #endif

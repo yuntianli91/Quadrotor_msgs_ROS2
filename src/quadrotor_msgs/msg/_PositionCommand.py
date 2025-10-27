@@ -10,8 +10,8 @@ import std_msgs.msg
 class PositionCommand(genpy.Message):
   _md5sum = "835935bcd6f18632d9e26a3093237902"
   _type = "quadrotor_msgs/PositionCommand"
-  _has_header = True #flag to mark the presence of a Header object
-  _full_text = """Header header
+  _has_header = True #flag to mark the presence of a std_msgs/Header object
+  _full_text = """std_msgs/Header header
 geometry_msgs/Point position
 geometry_msgs/Vector3 velocity
 geometry_msgs/Vector3 acceleration
@@ -21,7 +21,7 @@ float64[3] kx
 float64[3] kv
 
 ================================================================================
-MSG: std_msgs/Header
+MSG: std_msgs/std_msgs/Header
 # Standard metadata for higher-level stamped data types.
 # This is generally used to communicate timestamped data 
 # in a particular coordinate frame.
@@ -54,7 +54,7 @@ float64 y
 float64 z
 """
   __slots__ = ['header','position','velocity','acceleration','yaw','yaw_dot','kx','kv']
-  _slot_types = ['std_msgs/Header','geometry_msgs/Point','geometry_msgs/Vector3','geometry_msgs/Vector3','float64','float64','float64[3]','float64[3]']
+  _slot_types = ['std_msgs/std_msgs/Header','geometry_msgs/Point','geometry_msgs/Vector3','geometry_msgs/Vector3','float64','float64','float64[3]','float64[3]']
 
   def __init__(self, *args, **kwds):
     """
@@ -74,7 +74,7 @@ float64 z
       super(PositionCommand, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.position is None:
         self.position = geometry_msgs.msg.Point()
       if self.velocity is None:
@@ -90,7 +90,7 @@ float64 z
       if self.kv is None:
         self.kv = [0.,0.,0.]
     else:
-      self.header = std_msgs.msg.Header()
+      self.header = std_msgs.msg.std_msgs/Header()
       self.position = geometry_msgs.msg.Point()
       self.velocity = geometry_msgs.msg.Vector3()
       self.acceleration = geometry_msgs.msg.Vector3()
@@ -136,7 +136,7 @@ float64 z
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.position is None:
         self.position = geometry_msgs.msg.Point()
       if self.velocity is None:
@@ -205,7 +205,7 @@ float64 z
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.position is None:
         self.position = geometry_msgs.msg.Point()
       if self.velocity is None:

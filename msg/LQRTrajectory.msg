@@ -1,14 +1,14 @@
-Header header
+std_msgs/Header header
 
 # the trajectory id, starts from "1".
 uint32 trajectory_id
 
 # the action command for trajectory server.
-uint32 ACTION_ADD           =   1
-uint32 ACTION_ABORT         =   2
-uint32 ACTION_WARN_START           =   3
-uint32 ACTION_WARN_FINAL           =   4
-uint32 ACTION_WARN_IMPOSSIBLE      =   5
+uint32 action_add               1
+uint32 action_abort             2
+uint32 action_warn_start        3
+uint32 action_warn_final        4
+uint32 action_warn_impossible   5
 uint32 action
 
 # the weight coefficient of the control effort

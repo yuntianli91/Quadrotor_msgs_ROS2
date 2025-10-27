@@ -9,7 +9,7 @@ import std_msgs.msg
 class Serial(genpy.Message):
   _md5sum = "e448fb7595af9a8adfcab5ec241c7d4f"
   _type = "quadrotor_msgs/Serial"
-  _has_header = True #flag to mark the presence of a Header object
+  _has_header = True #flag to mark the presence of a std_msgs/Header object
   _full_text = """# Note: These constants need to be kept in sync with the types
 # defined in include/quadrotor_msgs/comm_types.h
 uint8 SO3_CMD = 115 # 's' in base 10
@@ -19,13 +19,13 @@ uint8 OUTPUT_DATA = 100 # 'd' in base 10
 uint8 PPR_OUTPUT_DATA = 116 # 't' in base 10
 uint8 PPR_GAINS = 103 # 'g'
 
-Header header
+std_msgs/Header header
 uint8 channel
 uint8 type # One of the types listed above
 uint8[] data
 
 ================================================================================
-MSG: std_msgs/Header
+MSG: std_msgs/std_msgs/Header
 # Standard metadata for higher-level stamped data types.
 # This is generally used to communicate timestamped data 
 # in a particular coordinate frame.
@@ -52,7 +52,7 @@ string frame_id
   PPR_GAINS = 103
 
   __slots__ = ['header','channel','type','data']
-  _slot_types = ['std_msgs/Header','uint8','uint8','uint8[]']
+  _slot_types = ['std_msgs/std_msgs/Header','uint8','uint8','uint8[]']
 
   def __init__(self, *args, **kwds):
     """
@@ -72,7 +72,7 @@ string frame_id
       super(Serial, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.channel is None:
         self.channel = 0
       if self.type is None:
@@ -80,7 +80,7 @@ string frame_id
       if self.data is None:
         self.data = ''
     else:
-      self.header = std_msgs.msg.Header()
+      self.header = std_msgs.msg.std_msgs/Header()
       self.channel = 0
       self.type = 0
       self.data = ''
@@ -127,7 +127,7 @@ string frame_id
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       end = 0
       _x = self
       start = end
@@ -195,7 +195,7 @@ string frame_id
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       end = 0
       _x = self
       start = end

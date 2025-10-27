@@ -8,7 +8,7 @@ import struct
 class Corrections(genpy.Message):
   _md5sum = "61e86887a75fe520847d3256306360f5"
   _type = "quadrotor_msgs/Corrections"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False #flag to mark the presence of a std_msgs/Header object
   _full_text = """float64 kf_correction
 float64[2] angle_corrections
 

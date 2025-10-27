@@ -8,7 +8,7 @@ import struct
 class AuxCommand(genpy.Message):
   _md5sum = "94f75840e4b1e03675da764692f2c839"
   _type = "quadrotor_msgs/AuxCommand"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False #flag to mark the presence of a std_msgs/Header object
   _full_text = """float64 current_yaw
 float64 kf_correction
 float64[2] angle_corrections# Trims for roll, pitch

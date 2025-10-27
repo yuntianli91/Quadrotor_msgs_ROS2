@@ -9,14 +9,14 @@ import std_msgs.msg
 class StatusData(genpy.Message):
   _md5sum = "c70a4ec4725273263ae176ad30f89553"
   _type = "quadrotor_msgs/StatusData"
-  _has_header = True #flag to mark the presence of a Header object
-  _full_text = """Header header
+  _has_header = True #flag to mark the presence of a std_msgs/Header object
+  _full_text = """std_msgs/Header header
 uint16 loop_rate
 float64 voltage
 uint8 seq
 
 ================================================================================
-MSG: std_msgs/Header
+MSG: std_msgs/std_msgs/Header
 # Standard metadata for higher-level stamped data types.
 # This is generally used to communicate timestamped data 
 # in a particular coordinate frame.
@@ -35,7 +35,7 @@ string frame_id
 
 """
   __slots__ = ['header','loop_rate','voltage','seq']
-  _slot_types = ['std_msgs/Header','uint16','float64','uint8']
+  _slot_types = ['std_msgs/std_msgs/Header','uint16','float64','uint8']
 
   def __init__(self, *args, **kwds):
     """
@@ -55,7 +55,7 @@ string frame_id
       super(StatusData, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.loop_rate is None:
         self.loop_rate = 0
       if self.voltage is None:
@@ -63,7 +63,7 @@ string frame_id
       if self.seq is None:
         self.seq = 0
     else:
-      self.header = std_msgs.msg.Header()
+      self.header = std_msgs.msg.std_msgs/Header()
       self.loop_rate = 0
       self.voltage = 0.
       self.seq = 0
@@ -103,7 +103,7 @@ string frame_id
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       end = 0
       _x = self
       start = end
@@ -158,7 +158,7 @@ string frame_id
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       end = 0
       _x = self
       start = end

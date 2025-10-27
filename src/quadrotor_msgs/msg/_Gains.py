@@ -8,7 +8,7 @@ import struct
 class Gains(genpy.Message):
   _md5sum = "b82763b9f24e5595e2a816aa779c9461"
   _type = "quadrotor_msgs/Gains"
-  _has_header = False #flag to mark the presence of a Header object
+  _has_header = False #flag to mark the presence of a std_msgs/Header object
   _full_text = """float64 Kp
 float64 Kd
 float64 Kp_yaw
@@ -35,19 +35,19 @@ float64 Kd_yaw
     if args or kwds:
       super(Gains, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.Kp is None:
-        self.Kp = 0.
-      if self.Kd is None:
-        self.Kd = 0.
-      if self.Kp_yaw is None:
-        self.Kp_yaw = 0.
-      if self.Kd_yaw is None:
-        self.Kd_yaw = 0.
+      if self.kp is None:
+        self.kp = 0.
+      if self.kd is None:
+        self.kd = 0.
+      if self.kp_yaw is None:
+        self.kp_yaw = 0.
+      if self.kd_yaw is None:
+        self.kd_yaw = 0.
     else:
-      self.Kp = 0.
-      self.Kd = 0.
-      self.Kp_yaw = 0.
-      self.Kd_yaw = 0.
+      self.kp = 0.
+      self.kd = 0.
+      self.kp_yaw = 0.
+      self.kd_yaw = 0.
 
   def _get_types(self):
     """
@@ -62,7 +62,7 @@ float64 Kd_yaw
     """
     try:
       _x = self
-      buff.write(_struct_4d.pack(_x.Kp, _x.Kd, _x.Kp_yaw, _x.Kd_yaw))
+      buff.write(_struct_4d.pack(_x.kp, _x.kd, _x.kp_yaw, _x.kd_yaw))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
@@ -76,7 +76,7 @@ float64 Kd_yaw
       _x = self
       start = end
       end += 32
-      (_x.Kp, _x.Kd, _x.Kp_yaw, _x.Kd_yaw,) = _struct_4d.unpack(str[start:end])
+      (_x.kp, _x.kd, _x.kp_yaw, _x.kd_yaw,) = _struct_4d.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -90,7 +90,7 @@ float64 Kd_yaw
     """
     try:
       _x = self
-      buff.write(_struct_4d.pack(_x.Kp, _x.Kd, _x.Kp_yaw, _x.Kd_yaw))
+      buff.write(_struct_4d.pack(_x.kp, _x.kd, _x.kp_yaw, _x.kd_yaw))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(_x))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(_x))))
 
@@ -105,7 +105,7 @@ float64 Kd_yaw
       _x = self
       start = end
       end += 32
-      (_x.Kp, _x.Kd, _x.Kp_yaw, _x.Kd_yaw,) = _struct_4d.unpack(str[start:end])
+      (_x.kp, _x.kd, _x.kp_yaw, _x.kd_yaw,) = _struct_4d.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill

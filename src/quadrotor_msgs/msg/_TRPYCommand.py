@@ -10,8 +10,8 @@ import std_msgs.msg
 class TRPYCommand(genpy.Message):
   _md5sum = "6779ee8a86cc757aeea21725df32d00c"
   _type = "quadrotor_msgs/TRPYCommand"
-  _has_header = True #flag to mark the presence of a Header object
-  _full_text = """Header header
+  _has_header = True #flag to mark the presence of a std_msgs/Header object
+  _full_text = """std_msgs/Header header
 float32 thrust
 float32 roll
 float32 pitch
@@ -19,7 +19,7 @@ float32 yaw
 quadrotor_msgs/AuxCommand aux
 
 ================================================================================
-MSG: std_msgs/Header
+MSG: std_msgs/std_msgs/Header
 # Standard metadata for higher-level stamped data types.
 # This is generally used to communicate timestamped data 
 # in a particular coordinate frame.
@@ -46,7 +46,7 @@ bool use_external_yaw
 
 """
   __slots__ = ['header','thrust','roll','pitch','yaw','aux']
-  _slot_types = ['std_msgs/Header','float32','float32','float32','float32','quadrotor_msgs/AuxCommand']
+  _slot_types = ['std_msgs/std_msgs/Header','float32','float32','float32','float32','quadrotor_msgs/AuxCommand']
 
   def __init__(self, *args, **kwds):
     """
@@ -66,7 +66,7 @@ bool use_external_yaw
       super(TRPYCommand, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.thrust is None:
         self.thrust = 0.
       if self.roll is None:
@@ -78,7 +78,7 @@ bool use_external_yaw
       if self.aux is None:
         self.aux = quadrotor_msgs.msg.AuxCommand()
     else:
-      self.header = std_msgs.msg.Header()
+      self.header = std_msgs.msg.std_msgs/Header()
       self.thrust = 0.
       self.roll = 0.
       self.pitch = 0.
@@ -123,7 +123,7 @@ bool use_external_yaw
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.aux is None:
         self.aux = quadrotor_msgs.msg.AuxCommand()
       end = 0
@@ -192,7 +192,7 @@ bool use_external_yaw
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.aux is None:
         self.aux = quadrotor_msgs.msg.AuxCommand()
       end = 0

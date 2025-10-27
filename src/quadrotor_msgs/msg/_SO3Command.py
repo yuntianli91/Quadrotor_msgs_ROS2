@@ -11,16 +11,16 @@ import std_msgs.msg
 class SO3Command(genpy.Message):
   _md5sum = "a466650b2633e768513aa3bf62383c86"
   _type = "quadrotor_msgs/SO3Command"
-  _has_header = True #flag to mark the presence of a Header object
-  _full_text = """Header header
+  _has_header = True #flag to mark the presence of a std_msgs/Header object
+  _full_text = """std_msgs/Header header
 geometry_msgs/Vector3 force
 geometry_msgs/Quaternion orientation
-float64[3] kR
-float64[3] kOm
+float64[3] k_r
+float64[3] k_om
 quadrotor_msgs/AuxCommand aux
 
 ================================================================================
-MSG: std_msgs/Header
+MSG: std_msgs/std_msgs/Header
 # Standard metadata for higher-level stamped data types.
 # This is generally used to communicate timestamped data 
 # in a particular coordinate frame.
@@ -62,8 +62,8 @@ bool enable_motors
 bool use_external_yaw
 
 """
-  __slots__ = ['header','force','orientation','kR','kOm','aux']
-  _slot_types = ['std_msgs/Header','geometry_msgs/Vector3','geometry_msgs/Quaternion','float64[3]','float64[3]','quadrotor_msgs/AuxCommand']
+  __slots__ = ['header','force','orientation','k_r','k_om','aux']
+  _slot_types = ['std_msgs/std_msgs/Header','geometry_msgs/Vector3','geometry_msgs/Quaternion','float64[3]','float64[3]','quadrotor_msgs/AuxCommand']
 
   def __init__(self, *args, **kwds):
     """
@@ -73,7 +73,7 @@ bool use_external_yaw
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,force,orientation,kR,kOm,aux
+       header,force,orientation,k_r,k_om,aux
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -83,23 +83,23 @@ bool use_external_yaw
       super(SO3Command, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.force is None:
         self.force = geometry_msgs.msg.Vector3()
       if self.orientation is None:
         self.orientation = geometry_msgs.msg.Quaternion()
-      if self.kR is None:
-        self.kR = [0.,0.,0.]
-      if self.kOm is None:
-        self.kOm = [0.,0.,0.]
+      if self.k_r is None:
+        self.k_r = [0.,0.,0.]
+      if self.k_om is None:
+        self.k_om = [0.,0.,0.]
       if self.aux is None:
         self.aux = quadrotor_msgs.msg.AuxCommand()
     else:
-      self.header = std_msgs.msg.Header()
+      self.header = std_msgs.msg.std_msgs/Header()
       self.force = geometry_msgs.msg.Vector3()
       self.orientation = geometry_msgs.msg.Quaternion()
-      self.kR = [0.,0.,0.]
-      self.kOm = [0.,0.,0.]
+      self.k_r = [0.,0.,0.]
+      self.k_om = [0.,0.,0.]
       self.aux = quadrotor_msgs.msg.AuxCommand()
 
   def _get_types(self):
@@ -127,8 +127,8 @@ bool use_external_yaw
         buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
       buff.write(_struct_7d.pack(_x.force.x, _x.force.y, _x.force.z, _x.orientation.x, _x.orientation.y, _x.orientation.z, _x.orientation.w))
-      buff.write(_struct_3d.pack(*self.kR))
-      buff.write(_struct_3d.pack(*self.kOm))
+      buff.write(_struct_3d.pack(*self.k_r))
+      buff.write(_struct_3d.pack(*self.k_om))
       _x = self
       buff.write(_struct_2d.pack(_x.aux.current_yaw, _x.aux.kf_correction))
       buff.write(_struct_2d.pack(*self.aux.angle_corrections))
@@ -144,7 +144,7 @@ bool use_external_yaw
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.force is None:
         self.force = geometry_msgs.msg.Vector3()
       if self.orientation is None:
@@ -171,10 +171,10 @@ bool use_external_yaw
       (_x.force.x, _x.force.y, _x.force.z, _x.orientation.x, _x.orientation.y, _x.orientation.z, _x.orientation.w,) = _struct_7d.unpack(str[start:end])
       start = end
       end += 24
-      self.kR = _struct_3d.unpack(str[start:end])
+      self.k_r = _struct_3d.unpack(str[start:end])
       start = end
       end += 24
-      self.kOm = _struct_3d.unpack(str[start:end])
+      self.k_om = _struct_3d.unpack(str[start:end])
       _x = self
       start = end
       end += 16
@@ -213,8 +213,8 @@ bool use_external_yaw
         buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
       buff.write(_struct_7d.pack(_x.force.x, _x.force.y, _x.force.z, _x.orientation.x, _x.orientation.y, _x.orientation.z, _x.orientation.w))
-      buff.write(self.kR.tostring())
-      buff.write(self.kOm.tostring())
+      buff.write(self.k_r.tostring())
+      buff.write(self.k_om.tostring())
       _x = self
       buff.write(_struct_2d.pack(_x.aux.current_yaw, _x.aux.kf_correction))
       buff.write(self.aux.angle_corrections.tostring())
@@ -231,7 +231,7 @@ bool use_external_yaw
     """
     try:
       if self.header is None:
-        self.header = std_msgs.msg.Header()
+        self.header = std_msgs.msg.std_msgs/Header()
       if self.force is None:
         self.force = geometry_msgs.msg.Vector3()
       if self.orientation is None:
@@ -258,10 +258,10 @@ bool use_external_yaw
       (_x.force.x, _x.force.y, _x.force.z, _x.orientation.x, _x.orientation.y, _x.orientation.z, _x.orientation.w,) = _struct_7d.unpack(str[start:end])
       start = end
       end += 24
-      self.kR = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=3)
+      self.k_r = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=3)
       start = end
       end += 24
-      self.kOm = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=3)
+      self.k_om = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=3)
       _x = self
       start = end
       end += 16
